@@ -7,40 +7,38 @@ from rest_framework.permissions import IsAuthenticated,AllowAny
 
 from django.shortcuts import get_object_or_404
 from order.models import Order
+from vendor.models import Vendor, Perfomance
 from .serializers import OrderSerializer
 
 @api_view(["POST","GET"])
 @permission_classes ([AllowAny])
-def create_purchase_order(request,id):
+def create_purchase_order(request):
      if request.method == "POST":
-        po_number = request.data.get('po_number')
         vendor = request.data.get('vendor')
-        order_date= request.data.get('order_date')
         items = request.data.get('items')
         quantity = request.data.get('quantity')
-        status = request.data.get('status')
 
-        last_vendor = Order.objects.all().first()
-        if last_vendor is not None:
-            id = last_vendor.id
-            vendor_code = f"VD00{id+1}" 
+        vendor = Vendor.objects.get(id=vendor)
+
+        last_order = Order.objects.all().first()
+        if last_order is not None:
+            id = last_order.id
+            po_number = f"ORD00{id+1}" 
         else:
-            vendor_code ="VD001"
-        vendor = Order.objects.create(
+            po_number ="ORD001"
+        order = Order.objects.create(
             po_number = po_number,
             vendor = vendor,
-            order_date = order_date,
             items = items,
             quantity = quantity,
-            status = status,
-            vendor_code = vendor_code
+            status = 1,
         )
 
-        vendor.save()
+        order.save()
 
         response_data = {
             "status_code" : 6000,
-            "message" :"Successfully created vendor"
+            "message" :"Successfully purchased"
         }
 
         return Response(response_data)

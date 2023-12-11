@@ -33,6 +33,15 @@ def vendor(request):
 
         vendor.save()
 
+        date = datetime.date.today()
+
+        performance = Perfomance.objects.create(
+            vendor=vendor,
+            date=date
+        )
+
+        performance.save()
+
         response_data = {
             "status_code" : 6000,
             "message" :"Successfully created vendor"
