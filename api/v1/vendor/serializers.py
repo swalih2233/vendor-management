@@ -11,5 +11,5 @@ class VendorSerializer(ModelSerializer):
 
 class PerfomanceSerializer(ModelSerializer):
     class Meta:
-        fields = ("id","vendor","date"," on_time_delivery_date","average_response_time","fulfillment_rate")
+        fields = ("id","vendor","date","on_time_delivery_rate","average_response_time","fulfillment_rate")
         model = Perfomance

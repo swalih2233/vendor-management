@@ -7,7 +7,7 @@ from rest_framework.permissions import IsAuthenticated,AllowAny
 
 from django.shortcuts import get_object_or_404
 from vendor.models import Vendor, Perfomance
-from .serializers import VendorSerializer 
+from .serializers import VendorSerializer, PerfomanceSerializer 
 
 
 @api_view(["POST", "GET"])
@@ -115,5 +115,19 @@ def update_vendor(request,id):
 
 @api_view(["GET"])
 @permission_classes ([AllowAny])
-def perfomance(request):
-    pass
+def perfomance(request,id):
+    vendor = get_object_or_404(Vendor, id=id)
+
+    instance = get_object_or_404(Perfomance,vendor=vendor)
+
+    context ={
+            "request":request
+        }
+    serializer = PerfomanceSerializer(instance,context=context)
+
+
+    response_data ={
+            "status_code":6000,
+            "data":serializer.data
+        }
+    return Response(response_data)
