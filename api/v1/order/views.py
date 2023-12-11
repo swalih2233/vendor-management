@@ -74,10 +74,7 @@ def purchase_oder_details(request):
             "status_code":6000,
             "data":serializer.data
         }
-        return Response(response_data)
-    elif request.method == "PUT":
-        pass
-    
+        return Response(response_data) 
 
     elif request.method == "DELETE":
         instance.delete()
