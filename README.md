@@ -19,7 +19,7 @@
 
 4. **Then change the DB Details in settings.py**
 
-   `DATABASES = {
+   DATABASES = {
       'default': {
          'ENGINE': 'django.db.backends.postgresql_psycopg2',
          'NAME': 'DB_NAME',
@@ -28,7 +28,7 @@
          'HOST':'localhost',
          'PORT':'5432'
       }
-   }`
+   }
    
 5. **Then Apply Migrations.**
 

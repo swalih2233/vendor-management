@@ -15,12 +15,13 @@ class Order(models.Model):
     vendor= models.ForeignKey(Vendor, on_delete=models.CASCADE)
     order_date = models.DateTimeField(auto_now=True)
     delivery_date = models.DateTimeField(blank=True,null=True)
+    expeted_delivery_date = models.DateTimeField(blank=True,null=True)
     items = models.JSONField()
     quantity = models.IntegerField()
     status = models.CharField(max_length=25,choices=STATUS_CHOICES)
     quality_rating = models.FloatField(blank=True, null=True)
     issue_date = models.DateTimeField(blank=True, null=True)
-    acknowledgment_date = models.DateField(blank=True, null=True)
+    acknowledgment_date = models.DateTimeField(blank=True, null=True)
 
     
     class Meta:
