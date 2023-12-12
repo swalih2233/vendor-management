@@ -28,7 +28,7 @@
          'ENGINE': 'django.db.backends.sqlite3', \
          'NAME': BASE_DIR / 'db.sqlite3', \
       } \
-   } \
+   } 
 
    **For PostgreSQL Update DB Details in settings.py**
 
@@ -41,7 +41,7 @@
          'HOST':'localhost', \
          'PORT':'5432' \
       } \
-   } \
+   } 
    
 5. **Then Apply Migrations.**
 
@@ -66,7 +66,7 @@
       { \
          "status_code": 6000, \
          "message" : "Vendor Created successfully" \
-      } \
+      } 
 
    `2. GET BASE_URL + vendors/`
 
@@ -75,7 +75,7 @@
       { \
          "status_code": 6000, \
          "data" : [vendors details] \
-      } \
+      } 
 
 
    `3. GET BASE_URL + vendors/id/`
@@ -85,7 +85,7 @@
       { \
          "status_code": 6000, \
          "data" : [vendor details] \
-      } \
+      } 
       
    
    `4. PUT BASE_URL + vendors/id/`
@@ -95,7 +95,7 @@
       { \
          "status_code": 6000, \
          "message" : "vender updated successfully" \
-      } \
+      } 
 
    `5. DELETE BASE_URL + vendors/id/`
 
@@ -104,7 +104,7 @@
       { \
          "status_code": 6000, \
          "message" : "vender deleted successfully" \
-      } \
+      } 
 
    `6. GET BASE_URL + vendors/id/perfomance/`
 
@@ -113,7 +113,7 @@
       { \
          "status_code": 6000, \
          "data" : [vendor perfomance details] \
-      } \
+      } 
 
 
    `7. POST BASE_URL + purchase_orders/`
@@ -127,7 +127,7 @@
       { \
          "status_code": 6000, \
          "message" : "Purchased successfully" \
-      } \
+      } 
 
    `8. GET BASE_URL + purchase_orders/`
 
@@ -136,7 +136,7 @@
       { \
          "status_code": 6000, \
          "data" : [orders details] \
-      } \
+      } 
 
 
    `9. GET BASE_URL + purchase_orders/id/`
@@ -146,7 +146,7 @@
       { \
          "status_code": 6000, \
          "data" : [order details] \
-      } \
+      } 
 
    `10. DELETE BASE_URL + purchase_orders/id/`
 
@@ -155,7 +155,7 @@
       { \
          "status_code": 6000, \
          "message" : "Deleted successfully" \
-      } \
+      } 
 
    `10. PUT BASE_URL + purchase_orders/id/issue_date/`
 
@@ -164,7 +164,7 @@
       { \
          "status_code": 6000, \
          "message" : "Updated successfully" \
-      } \
+      } 
 
    `11. PUT BASE_URL + purchase_orders/id/acknowledgment_date/`
 
@@ -177,7 +177,7 @@
       { \
          "status_code": 6000, \
          "message" : "Updated successfully" \
-      } \
+      } 
 
    `12. PUT BASE_URL + purchase_orders/id/delivery_date/`
 
@@ -186,7 +186,7 @@
       { \
          "status_code": 6000, \
          "message" : "Updated successfully" \
-      } \
+      } 
 
 
    `13. PUT BASE_URL + purchase_orders/id/quality_rating/`
@@ -200,4 +200,4 @@
       { \
          "status_code": 6000, \
          "message" : "Updated successfully" \
-      } \
+      } 
